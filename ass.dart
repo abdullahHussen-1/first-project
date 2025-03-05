@@ -335,3 +335,184 @@ class BankAccount {
 
 enum TrafficLight {red,yellow,green}
 */
+
+
+//////////////////////////////////////////////////////
+//week 3
+
+/*
+/*
+task 1
+1.1. Create a Base Class
+
+Define a class Animal with a method makeSound() that prints "Some sound".
+
+Create a subclass Dog that overrides makeSound() to print "Bark!".
+
+
+
+1.2. Add Properties
+
+Modify Animal to include a name property (initialized via constructor).
+
+Create a subclass Cat that initializes name and overrides makeSound().*/
+
+void main (){
+Dog d1=Dog();
+d1.makeSound();
+print("---------------");
+Cat c1=Cat("Whiskers");
+print("Cat name: ${c1.name}");
+c1.makeSound();
+
+}
+
+class Animals{
+  String ?name;
+  Animals([this.name]){}
+  void makeSound(){
+    print("Some sound");
+  }
+}
+
+class Dog extends Animals{
+  @override
+  void makeSound()
+  {
+    print("Bark!");
+  }
+}
+
+class Cat extends Animals{
+  Cat(String name):super(name);
+  @override
+  void makeSound(){
+    print("Meow!");
+  }
+}*/
+
+
+/////////////////////////////////////////////
+
+
+/*
+/*
+task 2
+
+Create a class Vehicle with a method start() that prints "Vehicle started".
+
+Create a subclass Car that calls super.start() and adds "Car is ready to go!".*/
+
+void main (){
+Vehicle v1=Vehicle();
+v1.start();
+print("----------------------");
+Car c1=Car();
+c1.start();
+}
+
+class Vehicle {
+void start(){
+  print("Vehicle started");
+}
+}
+class Car extends Vehicle{
+  @override
+  void start(){
+    super.start();
+    print("Car is ready to go!");
+  }
+}*/
+
+
+
+//////////////////////////////////////////////
+/*
+/*
+task 3
+ Method Overriding & Constructor Chaining
+
+Create Person with a constructor that prints "Person created".
+
+Create Student that extends Person and prints "Student created" using super.*/
+void main (){
+Person p1=Person();
+print("-----------------");
+
+Student s1=Student();
+}
+
+
+class Person {
+  Person(){
+    print("Person created");
+  }
+}
+
+class Student extends Person{
+  Student():super(){
+    print("Student created");
+  }
+}*/
+
+
+/*
+/*
+task 4
+4 . Using Mixins
+
+4.1Create a mixin Swimming with a method swim().
+
+4.2Apply it to Fish and Duck classes.
+
+
+
+4.3 Multiple Mixins in One Class
+
+Create two mixins: Flying (fly()) and Singing (sing()).
+
+4.4 Apply both to a Bird class*/
+mixin Swimming {
+ String swim(){
+   return "Swimming!";
+ }
+}
+
+mixin Flying {
+  void fly(){
+    print( "Flying!");
+  }
+}
+
+mixin Singing{
+  void sing(){
+    print( "Singing!");
+  }
+}
+
+
+void main(){
+Fish f1=Fish();
+print("Fish ${f1.swim()}");
+
+print("-------------------");
+
+Duck d1=Duck();
+print("Duck ${d1.swim()}");
+
+print("---------------------------");
+
+Bird b1=Bird();
+b1.fly();
+print("-----------------");
+b1.sing();
+
+}
+
+
+
+ class Fish with Swimming{}
+ class Duck with Swimming{}
+ class Bird with Flying ,Singing{}*/
+
+    
