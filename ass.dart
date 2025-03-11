@@ -516,3 +516,189 @@ b1.sing();
  class Bird with Flying ,Singing{}*/
 
     
+////////////////////////////////////////////////
+//week3.2
+/*
+/*Task 1: 
+
+Objective: Implement a class with private properties and provide getter and setter methods.
+
+Instructions:
+
+1. Create a class BankAccount with:
+
+A private property _balance (double).
+
+A constructor that initializes _balance with a value.
+
+A getter getBalance() that returns _balance.
+
+A setter deposit(double amount) that adds amount to _balance if it's positive.
+
+A setter withdraw(double amount) that deducts amount from _balance if it's available.
+
+2. In main(), create an instance of BankAccount and test deposits and withdrawals. */
+
+void main() {
+
+  BankAccount b1=BankAccount(1000);
+   print('Initial balance: ${b1.getBalance}');
+
+  b1.deposit(50.0);
+  print('Balance after deposit: ${b1.getBalance}');
+
+  b1.withdraw(25.0);
+  print('Balance after withdrawal: ${b1.getBalance}');
+}
+
+class BankAccount {
+  double _balance;
+
+  BankAccount(this._balance);
+
+  get getBalance {
+    return _balance;
+  }
+  void deposit(double amount){
+    if(amount>=0){
+    _balance+=amount;
+    }
+  }
+  void withdraw (double amount){
+    if (_balance>=0)
+    {
+      _balance-=amount;
+    }
+  }
+}*/
+
+
+
+/*
+
+/*
+
+ask 2: 
+
+Objective: Use implements to enforce method implementation.
+
+Instructions:
+
+1. Create an interface Animal with:
+
+Method makeSound().
+
+
+
+2. Create classes Dog and Cat that implement Animal:
+
+Dog prints "Woof!"
+
+Cat prints "Meow!"
+
+
+
+3. In main(), create objects of Dog and Cat and call makeSound().*/
+void main(){
+
+  Dog dog=Dog();
+  dog.makeSound();
+  Cat cat=Cat();
+  cat.makeSound();
+}
+
+abstract class Animal{
+  void makeSound();
+}
+
+class Dog extends Animal{
+  @override
+  void makeSound() {
+    // TODO: implement makeSound
+    print("Woof!");
+  }
+
+}
+
+class Cat extends Animal{
+  @override
+  void makeSound() {
+    // TODO: implement makeSound
+    print("Meow!");
+  }
+
+}*/
+
+
+/*
+/*
+ask 3:
+
+Objective: Define an abstract class and extend it.
+
+Instructions:
+
+1. Create an abstract class Shape with:
+
+Abstract method double area().
+
+Abstract method double perimeter().
+
+
+
+2. Create subclasses Circle and Rectangle that override area() and perimeter().
+
+Circle has a radius and implements formulas.
+
+Rectangle has width and height and implements formulas.
+
+3. In main(), create objects of Circle and Rectangle and print their area and perimeter.*/
+void main(){
+
+  Circle circle =Circle(5.5) ;
+  Rectangle rectangle = Rectangle(4.0, 6.0);
+
+  print('Circle Area: ${circle.area()}');
+  print('Circle Perimeter: ${circle.perimeter()}');
+
+  print('Rectangle Area: ${rectangle.area()}');
+  print('Rectangle Perimeter: ${rectangle.perimeter()}');
+}
+
+abstract class Shape{
+
+   double area();
+
+   double perimeter();
+
+}
+class Circle extends Shape{
+  double? radius;
+  Circle(this.radius);
+  @override
+  double area() {
+   return pi * radius! * radius!;
+  }
+
+  @override
+  double perimeter() {
+    return 2 * pi * radius!;
+  }
+
+}
+
+class Rectangle extends Shape{
+  double?height;
+  double?width;
+  Rectangle(this.height,this.width);
+  @override
+  double area() {
+   return width! * height!;
+  }
+
+  @override
+  double perimeter() {
+    return 2 * (width !+ height!);
+  }
+
+}*/
