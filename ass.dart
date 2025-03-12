@@ -706,5 +706,91 @@ class Rectangle extends Shape{
 
 ///////////////////////////
 task 
+  class TODO {
+List <String> tasks=["Task","Task"];
 
+Future <void> loadTasks()async{
+  await Future.delayed(Duration(seconds: 3));
+  print("tasks loaded");
+}
+
+Future <void> saveTask()async{
+  await Future.delayed(Duration(seconds: 2));
+  print("tasks Save");
+}
+
+void addTask(String task){
+  tasks.add(task);
+  print("Added!");
+}
+
+
+void removeTask(int  remove){
+  remove--;
+  if (tasks.isEmpty)
+  {
+    print("tasks Empty");
+  }
+  else{
+    if (remove>=0&&remove<=tasks.length)
+    {
+      tasks.removeAt(remove);
+      print("task removed!");
+    }
+    else{
+       if (remove<0)
+       {
+        print("The number you entered is smaller than the length List.");
+       }
+       else{
+        print("The number you entered is greater than the length List.");
+       }
+    }
+  }
+}
+void showTasks(){
+  if (tasks.isEmpty)
+  {
+    print("tasks Empty");
+  }
+  else
+  {
+    for(int i=0;i<tasks.length;i++)
+    {
+      print("${i+1}:${tasks[i]}");
+    }
+  }
+}
+
+ }
+void main(){
+  TODO todo=TODO();
+  print("\n---Welcome To-Do List App ---");
+      print("1. Add Task");
+      print("2. Remove Task");
+      print("3. Show Tasks");
+      print("4. Save Tasks");
+      int chek=3;
+      for(int i=1;i<=4;i++){
+
+      
+      switch (i){
+        case 1:
+        print("Enter name task:eat");
+        todo.addTask("eat");
+        break;
+        case 2:
+        print("Enter number task:2");
+        todo.removeTask(2);
+        break;
+        case 3:
+        todo.showTasks();
+        break;
+        case 4:
+        todo.saveTask();
+        break;
+
+      }
+      }
+}
     
